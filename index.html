@@ -1,0 +1,81 @@
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html  lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Description"
+        content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!">
+  <title>AngularJS — Superheroic JavaScript MVW Framework</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/embed/bootstrap.min.css">
+  <link href="./prettify.css" type="text/css" rel="stylesheet">
+  <base href="/">
+
+  <script type="text/JavaScript" src="/embed/jquery.min.js"></script>
+  <script type="text/JavaScript"  id="angularScript" src="/embed/angular.min.js"></script>
+  <script type="text/JavaScript"  src="/embed/angular-animate.min.js"></script>
+
+  ﻿<!--[if lte IE 8]>
+    <script>
+      document.createElement('tabs');
+      document.createElement('pane');
+      document.createElement('ng-pluralize');
+    </script>
+  <![endif]-->
+</head>
+<body  ng-controller="AppController">
+	<div role="main" class="container">
+	    <h1 id="the-basics">The Basics</h1>
+	    <div class="row example">
+	      <div class="span8 app-source" app-source="hello.html" annotate="hello.annotation"></div>
+	      <div class="span4">
+	        <span hint></span>
+	        <span class="pull-right" js-fiddle="hello.html"></span>
+	        <div class="tabs-spacer"></div>
+	        <div app-run="hello.html" class="well"></div>
+
+	        
+	      </div>
+	    </div>
+	</div>
+	<div class="hello-code">
+    <!-- ============== Hello ============== -->
+
+    <script type="text/ng-template" id="hello.html">
+      <div>
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <hr>
+        <h1>Hello {{yourName}}!</h1>
+      </div>
+    </script>
+    <script type="text/ng-template" id="hello.annotation">
+      { "hello.html":
+          { "ng-app": "Tells AngularJS to be active in this portion of the page. In this case the entire document."
+          , "angular.min.js": "Load AngularJS."
+          , "ng-model": "This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control. Try it! Type in the control and see it update below."
+          , "{{yourName}}": "The <code>{{ }}</code> are a declarative way of specifying data binding locations in the HTML. AngularJS will automatically update this text whenever the <code>yourName</code> property changes."
+          }
+      }
+    </script>
+  </div>
+  <script src="/embed/homepage.js"></script>
+  <script src="/embed/prettify.min.js"></script>
+  <script src="/embed/download-data.js"></script>
+  <script src="/embed/angular-ui-bootstrap.js"></script>
+  <script src="/embed/angular-resource.min.js"></script>
+  <script src="/embed/angular-route.min.js"></script>
+  <script>
+  angular.bootstrap(document, ['ngRoute', 'homepage']);
+  </script>
+
+</body>
+</html>
